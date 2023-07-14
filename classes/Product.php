@@ -1,9 +1,7 @@
 <?php
 
-include_once __DIR__ . '/Category.php';
 include_once __DIR__ . '/Type.php';
-
-class Product {
+class Product extends Type{
     public $brand;
     public $name;
     public $price;
@@ -15,7 +13,6 @@ class Product {
         $this->name = $_name;
         $this->price = $_price;
         $this->code = $_code;
-        parent::__construct($_category);
-        parent::__contrsuct($_type);
+        parent::__construct($_category, $_type);
     }
 }
