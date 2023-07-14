@@ -1,5 +1,9 @@
 <?php
 
-include_once __DIR__ . '/classes/Product.php';
+include_once __DIR__ . '/classes/category.php';
 
-var_dump(new Product('Royal Canin', 'alimento para perros', '$1500', '123166', 'Perro', 'Alimento'));
+$category = new Category("Perros");
+$type = new Type("Perros", "Comida");
+$product = new Product("Perros", "Comida", "Marca", "Nombre del producto", 9.99, "ABC123");
+
+var_dump($category);

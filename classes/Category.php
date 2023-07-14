@@ -1,9 +1,9 @@
 <?php
-class Category{
-    public $category;
 
-    function __construct($_category){
-        $this->category = $_category;
-
+class Category {
+    public $categoryName;
+    
+    function __construct($_categoryName){
+        $this->categoryName = $_categoryName;
     }
 }
