@@ -1,11 +1,14 @@
 <?php
-
-include_once __DIR__ . '/Category.php';
-class Type extends Category {
-    public $typeName;
+class Type {
+    public $type;
+    public $typeIcon;
     
-    function __construct($_categoryName, $_typeName){
-        parent::__construct($_categoryName);
-        $this->typeName = $_typeName;
+    function __construct($_type, $_typeIcon){
+        $this->type = $_type;
+        $this->typeIcon = $_typeIcon;
+    }
+
+    public function getTypeIcon(){
+        return $this->typeIcon;
     }
 }
