@@ -19,24 +19,24 @@ include_once __DIR__ . '/db/db.php';
             </div>
         </div>
         <div class="row justify-content-between">
-            <?php foreach ($products as $product) { 
-                echo '<div class="col-4 mb-4">';
-                    echo '<div class="card">';
-                        echo '<img class="card-img-top" src="./img/' . $product->getDescriptionPicture() . '" alt="Product image">';
-                        echo '<div class="card-body">';
-                            echo '<h5 class="card-title">' . $product->getDescriptionName() . '</h5>';
-                            echo '<p class="card-text">' . $product->getDescriptionPrice() . '</p>';
-                            echo '<div class="d-flex justify-content-between">';
-                                echo '<a href="#" class="btn btn-primary">View Product</a>';
-                                echo '<div>';
-                                    echo '<i class="icon mx-2">' . $product->category->getCategoryIcon() . '</i>';
-                                    echo '<i class="icon mx-2">'. $product->type->getTypeIcon() . '</i>';
-                                echo '</div>';
-                            echo '</div>';
-                        echo '</div>';
-                    echo '</div>';
-                echo '</div>';
-            } ?>
+            <?php foreach ($products as $product) { ?>
+                <div class="col-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="./img/<?php echo $product->getProductPicture()?>" alt="Product image">
+                        <div class="card-body">
+                        <h5 class="card-title"><?php echo $product->getProductName()?></h5>
+                            <p class="card-text"><?php echo $product->getProductPrice()?></p>
+                            <div class="d-flex justify-content-between">
+                                <a href="#" class="btn btn-primary">View Product</a>
+                                <div>
+                                    <i class="icon mx-2"><?php echo $product->category->getCategoryIcon()?></i>
+                                    <i class="icon mx-2"><?php echo get_class($product)::$icon?></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
     </div>    
 </body>
